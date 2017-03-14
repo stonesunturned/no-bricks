@@ -10,7 +10,7 @@
 				  <span class="icon-bar"></span>
 				  <span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand site-title" href="/">{{ site.title }}</a>
+				<a class="navbar-brand site-title" href="{{ "/" | prepend:site.baseurl }}">{{ site.title }}</a>
 			</div>
 
 		  <!-- Collect the nav links, forms, and other content for toggling -->
@@ -29,9 +29,9 @@
 									{% for q in subpages %}
 										{% if q[listName] %}
 											{% if q.url == page.url %}
-											<li><a class="active-page" href="{{ q.url | prepend: site.github.url }}">{{ q.title }}<span class="sr-only">(current)</span></a></li>
+											<li><a class="active-page" href="{{ q.url | prepend: site.baseurl | prepend: site.github.url }}">{{ q.title }}<span class="sr-only">(current)</span></a></li>
 											{% else%}
-											<li><a class="page-link" href="{{ q.url | prepend: site.github.url }}">{{ q.title }}</a></li>
+											<li><a class="page-link" href="{{ q.url | prepend: site.baseurl | prepend: site.github.url }}">{{ q.title }}</a></li>
 											{% endif %}
 										{% endif %}
 									{% endfor %}
@@ -40,9 +40,9 @@
 
 						{% else %}
 							{% if p.url == page.url %}
-								<li><a class="active-page" href="{{ p.url | prepend: site.github.url }}">{{ p.title }}<span class="sr-only">(current)</span></a></li>
+								<li><a class="active-page" href="{{ p.url | prepend: site.baseurl | prepend: site.github.url }}">{{ p.title }}<span class="sr-only">(current)</span></a></li>
 							{% else %}
-								<li><a class="page-link" href="{{ p.url | prepend: site.github.url }}">{{ p.title }}</a></li>
+								<li><a class="page-link" href="{{ p.url | prepend: site.baseurl | prepend: site.github.url }}">{{ p.title }}</a></li>
 							{% endif %}
 						{% endif %}
 						{% endif %}
@@ -54,9 +54,9 @@
 					{% for p in pages %}
 						{% if p.inRightNav %}
 						{% if p.url == page.url %}
-							<li><a class="active-page" href="{{ p.url | prepend: site.github.url }}">{{ p.title }}<span class="sr-only">(current)</span></a></li>
+							<li><a class="active-page" href="{{ p.url | prepend: site.baseurl | prepend: site.github.url }}">{{ p.title }}<span class="sr-only">(current)</span></a></li>
 						{% else %}
-							<li><a class="page-link" href="{{ p.url | prepend: site.github.url }}">{{ p.title }}</a></li>
+							<li><a class="page-link" href="{{ p.url | prepend: site.baseurl | prepend: site.github.url }}">{{ p.title }}</a></li>
 						{% endif %}
 						{% endif %}
 					{% endfor %}

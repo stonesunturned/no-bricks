@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Risk Calculation
-permalink: /riskcalcul/
+permalink: /riskcalculation/
 inRisk: 0
 jsfname: RiskCalc.js
 excerpt: It's a sample risk calculation!
@@ -13,7 +13,7 @@ excerpt: It's a sample risk calculation!
 		<p>One frequent question about vaccines is "Do they even work? How do we know that these diseases didn't just disappear on their own? Aren't we cleaner and healthier than 100 years ago and couldn't that be it?" To answer these questions, it is very important to understand the way numbers are reported.</p>
 		<p>Suppose you are listening to the radio and you hear that there is an outbreak of fauxinia<a class="ptr">(1)</a>. Six vaccinated people got sick and four unvaccinated people got sick. Is it better to be vaccinated or unvaccinated?</p>
 		<p>What about if you saw this graph about cases of fauxinia in the years after vaccination started?:</p>
-		<img src="/assets/SickByProportion.png">
+		<img src="{{ "/assets/SickByProportion.png" | prepend: site.baseurl }}">
 		<p>What exactly is going on?</p>
 	</div>
 
@@ -31,7 +31,7 @@ excerpt: It's a sample risk calculation!
 		<p>The graphs are interactive, so you can play around with some of the assumptions I made.</p>
 		<ul>
 			<li>The efficacy tells you, if you get vaccinated, how likely the vaccine is to protect you. It's true that sometimes vaccinated people get sick because the vaccine didn't work for them, but it is also true that even a 10% effective vaccine is 10% more effective at preventing disease than not getting the vaccine<a class="ptr">(4)</a>.</li>
-			<li><p>The probability of getting sick if unprotected shows the chance that you will get sick if you are not vaccinated or the vaccine didn't take. This is initially set to 1 in 1, which is why all of the unvaccinated people get sick<a class="ptr">(5)</a>, but you can change it to see what things look like if the chance of getting sick if unprotected are only 1 in 50. This will, of course, also change the probability of getting sick for those who got vaccinated but it didn't take, so changing the probability of getting sick does not change the relative percentages of vaccinated and unvaccinated sick people (in the top-left graph); it only changes the percentage of sick people in the whole population (top-right graph).<br>One problem with the calculation here, which I noted at the *, is that it assumes that if you are unprotected, your chances of getting sick do not depend on the vaccine coverage. You might think that this is reasonable because how could <em>someone else</em> being vaccinated affect <em>your</em> chance of getting sick and, for diseases that are not person-to-person transmissible, like tetanus, that makes sense. But for more contagious diseases, <a href="/HerdImmunity">this assumption is wrong</a>.</p></li>
+			<li><p>The probability of getting sick if unprotected shows the chance that you will get sick if you are not vaccinated or the vaccine didn't take. This is initially set to 1 in 1, which is why all of the unvaccinated people get sick<a class="ptr">(5)</a>, but you can change it to see what things look like if the chance of getting sick if unprotected are only 1 in 50. This will, of course, also change the probability of getting sick for those who got vaccinated but it didn't take, so changing the probability of getting sick does not change the relative percentages of vaccinated and unvaccinated sick people (in the top-left graph); it only changes the percentage of sick people in the whole population (top-right graph).<br>One problem with the calculation here, which I noted at the *, is that it assumes that if you are unprotected, your chances of getting sick do not depend on the vaccine coverage. You might think that this is reasonable because how could <em>someone else</em> being vaccinated affect <em>your</em> chance of getting sick and, for diseases that are not person-to-person transmissible, like tetanus, that makes sense. But for more contagious diseases, <a href="{{ "/HerdImmunity" | prepend: site.baseurl }}">this assumption is wrong</a>.</p></li>
 			<li>You can click on the bars in either of the top two graphs to change the coverage rate that the pie chart numbers show. This doesn't actually change the relative percentages shown in the first two graphs, but it will change the overall numbers you see if you hover over the slices as well as the percentages in the bottom-right graph.</li>
 		</ul>
 		<p>Feel free to play around with these numbers because vaccine efficacy, coverage and probabilities of getting sick do vary for different diseases and situations. Some of the things I noticed are described in the next section, but you might find others that interest you.</p>
@@ -51,7 +51,7 @@ excerpt: It's a sample risk calculation!
 	</div>
 	<div class="container">
 		<h2>What's next?</h2>
-		<p>Now you hopefully understand the difference between the probability of being vaccinated if you are sick and the probability of getting sick if you are vaccinated. So that tells you how much <em>more</em> likely you are to get sick if you are unvaccinated, but how likely are you to get sick at all? This depends on how likely you are to run into the disease and, since diseases live in the humans they infect, that depends on how many infected people are wandering around and that, in the confusingly circular nature of vaccination, depends on whether the people out there around you are vaccinated. And that is <a href="/HerdImmunity">a whole new set of graphs</a>.</p>
+		<p>Now you hopefully understand the difference between the probability of being vaccinated if you are sick and the probability of getting sick if you are vaccinated. So that tells you how much <em>more</em> likely you are to get sick if you are unvaccinated, but how likely are you to get sick at all? This depends on how likely you are to run into the disease and, since diseases live in the humans they infect, that depends on how many infected people are wandering around and that, in the confusingly circular nature of vaccination, depends on whether the people out there around you are vaccinated. And that is <a href="{{ "/HerdImmunity" | prepend: site.baseurl }}">a whole new set of graphs</a>.</p>
 	</div>
 	<div class="container">
 		<h2>Footnotes</h2>
