@@ -1,0 +1,68 @@
+<header class=navbar role="banner">
+<!--<header class="site-header">-->
+	<nav role="navigation">
+	  <div class="container-fluid site-header">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				  <span class="sr-only">Toggle navigation</span>
+				  <span class="icon-bar"></span>
+				  <span class="icon-bar"></span>
+				  <span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand site-title" href="/">{{ site.title }}</a>
+			</div>
+
+		  <!-- Collect the nav links, forms, and other content for toggling -->
+			{% strip %}
+		  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		    <ul class="nav navbar-nav site-nav">
+					{% assign pages = site.pages | sort:"inNav" %}
+					{% for p in pages %}
+						{% if p.inNav %}
+						{% if p.dropdownList %}
+							{% assign listName = p.dropdownList %}
+			        <li class="dropdown page-link">
+		          	<a href="#" class="dropdown-toggle page-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ p.title }}<span class="caret"></span></a>
+						    <ul class="dropdown-menu page-link">
+						    	{% assign subpages = site.pages | sort: {{listName}} %}
+									{% for q in subpages %}
+										{% if q[listName] %}
+											{% if q.url == page.url %}
+											<li><a class="active-page" href="{{ q.url | prepend: site.github.url }}">{{ q.title }}<span class="sr-only">(current)</span></a></li>
+											{% else%}
+											<li><a class="page-link" href="{{ q.url | prepend: site.github.url }}">{{ q.title }}</a></li>
+											{% endif %}
+										{% endif %}
+									{% endfor %}
+						    </ul>
+						  </li>
+
+						{% else %}
+							{% if p.url == page.url %}
+								<li><a class="active-page" href="{{ p.url | prepend: site.github.url }}">{{ p.title }}<span class="sr-only">(current)</span></a></li>
+							{% else %}
+								<li><a class="page-link" href="{{ p.url | prepend: site.github.url }}">{{ p.title }}</a></li>
+							{% endif %}
+						{% endif %}
+						{% endif %}
+					{% endfor %}
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right site-nav">
+		      {% assign pages = site.pages | sort:"inRightNav"  %}
+					{% for p in pages %}
+						{% if p.inRightNav %}
+						{% if p.url == page.url %}
+							<li><a class="active-page" href="{{ p.url | prepend: site.github.url }}">{{ p.title }}<span class="sr-only">(current)</span></a></li>
+						{% else %}
+							<li><a class="page-link" href="{{ p.url | prepend: site.github.url }}">{{ p.title }}</a></li>
+						{% endif %}
+						{% endif %}
+					{% endfor %}
+		    </ul>
+			</div>
+			{% endstrip %}
+		</div>
+	</nav>
+</header>

@@ -1,0 +1,61 @@
+		<div class="row">
+			<div class="col-sm-6">
+				<form action="action_page.php" method="get">
+					Efficacy:
+					<input type="number" name="efficacy" min="0" max="99" value="95">
+				</form>
+				<form action="action_page.php" method="get">
+					Coverage:
+					<input type="number" name="cvg" min="0" max="99" value="90">
+				</form>
+			</div>
+			<div class="col-sm-6">
+				<form action="action_page.php" method="get">
+					Serial Interval (days):
+					<input type="number" name="serint" min="1" max="21" value="10">
+				</form>
+				<form action="action_page.php" method="get">
+					R0:
+					<input type="number" name="repno" min="0.1" step=0.2 max="20" value="10">
+				</form>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-6 chart"><h4 class="chart-title">Disease Spread</h4><div id="line_infected"></div></div>
+			<div class="col-sm-6 chart"><h4 class="chart-title">Total People Sick</h4><div id="line_numsick"></div></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 chart"> <div id="zoom_line_infected"></div></div>
+			<div class="col-sm-6 chart"> <div id="zoom_line_numsick"></div></div>
+		</div>
+
+<script type="text/javascript">
+	efficacy=$("input[name='efficacy']").val()/100.0;
+	cvg=$("input[name='cvg']").val()/100.0;
+	repno=$("input[name='repno']").val();
+	serint=$("input[name='serint']").val();
+	MakeCalculatedChart();
+
+	$("input[name='efficacy']").on("input", function() {
+		efficacy=$(this).val()/100.0;
+		MakeCalculatedChart();
+	});
+
+	$("input[name='cvg']").on("input", function() {
+		cvg=$(this).val()/100.0;
+		MakeCalculatedChart();
+	});
+	$("input[name='serint']").on("input", function() {
+		serint=$(this).val();
+		MakeCalculatedChart();
+	});
+	$("input[name='repno']").on("input", function() {
+		repno=$(this).val();
+		MakeCalculatedChart();
+	});
+
+	$(window).resize(function(){
+		MakeCalculatedChart()
+	});
+</script>

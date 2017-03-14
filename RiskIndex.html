@@ -1,0 +1,21 @@
+---
+layout: page
+title: Explanations
+permalink: /explanations/
+inNav: 0
+dropdownList: inRisk
+---
+
+<!-- I can probably do this much nicer with a grid layout and show an image, title and brief description for each, like here: https://rsms.me/ Should be able to use panels from bootstrap-->
+<p>What does risk really mean? The following is a list of pages on the site that try to address this question in different contexts.</p>
+
+<ul class="post-list">
+	{% for my_page in site.pages %}
+		{% if my_page.inRisk %}
+			<li>
+				<h2><a class="page-link" href="{{ my_page.url | prepend: site.github.url }}">{{ my_page.title }}</a></h2>
+				<p>{{ my_page.excerpt }}</p>
+			</li>
+		{% endif %}
+	{% endfor %}
+</ul>

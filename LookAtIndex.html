@@ -1,0 +1,21 @@
+---
+layout: page
+title: Data
+permalink: /data/
+inNav: 1
+dropdownList: inStudies
+---
+
+<!-- I can probably do this much nicer with a grid layout and show an image, title and brief description for each, like here: https://rsms.me/ Should be able to use panels from bootstrap-->
+<p>If you've been through the explanations section, you've had a lot of numbers thrown at you, but where did they come from? How reasonable are they? Here are a few pages summarizing information sources. Keep in mind that this is not an exhaustive list.</p>
+
+<ul class="post-list">
+	{% for my_page in site.pages %}
+		{% if my_page.inStudies %}
+			<li>
+				<h2><a class="page-link" href="{{ my_page.url | prepend: site.github.url }}">{{ my_page.title }}</a></h2>
+				<p>{{ my_page.excerpt }}</p>
+			</li>
+		{% endif %}
+	{% endfor %}
+</ul>

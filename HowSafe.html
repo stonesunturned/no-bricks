@@ -1,0 +1,57 @@
+---
+layout: page
+title: Safety Studies
+permalink: /HowSafe/
+inRisk: 1
+excerpt: Create your own clinical trial
+---
+
+<div id="left">
+	<div class="container">
+		<h2>How safe is safe?</h2>
+		<p>"There is so much uncertainty and so much we don’t know." This is a frequent statement on anti-vaccine blogs, but it applies pretty well to life in general I think. But one of the great things about science is that it actually allows us to quantify things and determine <em>how</em> uncertain we are about something and what exactly the limits are on what we know. Take, for example, the common claim that there are a lot of unanswered questions about vaccine safety and studies should be done to answer them. Great. This is the kind of problem that science is made for. Let's walk through how a scientist would go about addressing this sort of thing.</p>
+		<p>First, we need a very specific question. What vaccine do we want to look at (because they are all different and have different rates of side effects)? What side effect are we concerned about? What level should we consider safe?</p>
+		<p>To this last question, the instinctive answer might be "as safe as possible" or "no side effects", but these are not scientific answers. The first is not a scientific answer because it is not a quantifiable number. It might not be obvious that the second answer is not scientific because zero is indeed a number, but the question is how certain you can be that zero means zero.</p>
+	</div>
+
+	<div class="container">
+		<h2>An example</h2>
+		<p>Consider the case of RotaShield, a rotavirus vaccine<a class="ptr">(1)</a> approved for use in the US. Since rotavirus is related to gastrointestinal issues, we might consider looking to see whether the vaccine has any gastrointestinal side effects. But what is a reasonable level? Something lower than the rates of problems from the disease itself would obviously be a requirement. However, rotavirus was actually quite common before vaccination and about 95% of children had had an infection by age 5, albeit with varying severity, so this is a fairly low bar to clear.</p>
+		<p>I will not pretend to have the correct answer to this question. There are boards of doctors to decide this sort of thing in reality. But just for the sake of the example, let us suppose that we would like gastrointestinal side effects to be less than 1 in 1000. How many children do we need to look at in the initial trial to reach this level of safety?</p>
+	</div>
+	<div class="container">
+		<h2>How big a study?</h2>
+		<p>As you might expect, children stubbornly refuse to conform to consistent patterns, so that, if a side effect exists at a level of 1 in 1000, it is not that exactly every 1000th child you look at will show the side effect. Sometimes you might need to only look at 500 children before you find a case. Sometimes it might take as many as 1200. This is related to the uncertainty of the measurement.</p>
+		<p>I am not going to do a full rundown of <a href="https://en.wikipedia.org/wiki/Poisson_distribution">the way the statistics work</a>, but I hope that it at least instinctively makes sense that we would need to look at more than 1000 children. It turns out that if you were to look at just 1000 children, then about 37% of the time you would not see the side effect in any of them even if it actually existed at a rate of 1 in 1000. This is fine if we only want to be about 63% certain, but let's try to do better. Let's say we want to be about 95% certain that the side effect is not occurring in more than 1 in every 1000 children. We could work out the stats and these would tell us that we need to look at about 3000 children.</p>
+		<p>So suppose that we manage to get 3000 parents to agree to this study and we manage to set it all up and we find that two children have developed intussusception following vaccination. Intussusception is a bowel obstruction that can be fatal if not treated properly. This does not look good for the vaccine. But hold on! Just because something happened after vaccination, does not mean vaccination caused it. Intussusception actually occurs in young children anyway. We actually did not design our study very well because we want a control group to compare with, ideally a group that is getting a placebo (so both groups know that they could be getting the vaccine or just something that seems like the vaccine, but they are not sure which group they are). This means that we actually need about 6000 children, not 3000.</p>
+		<p>So, starting again, we have 6000 children and half of them get the rotavirus vaccine and half get a placebo<a class="ptr">(2)</a>. They don't know which group they are in and, in many cases, the researchers won't know either (this is known as a blinded study). All children are examined by doctors for intussusception and in the end suppose we find that 2 children who received the real vaccine developed intussusception and 1 in the control group did. Does the vaccine cause intussusception?</p>
+	</div>
+	<div class="container">
+		<h2>The annoying world of statistical signficance</h2>
+		<p>Again, we cannot say with complete certainty, but using statistics, it is possible to say whether the difference is statistically significant. "Statistically significant" is a phrase that comes up a lot in science and it is easy for a layperson to interpret it as meaning that there is a big difference between two things. It doesn't mean that. It is related to how certain you are that the difference between two things is real. This is why the statement about wanting "no side effects" is not really scientific. The best answer you can expect from a scientist is something like "the side effect occurs at a rate of less than 1 in 1000 when using a 95% confidence interval". Scientists are dull like that, but also precise.</p>
+		<p>Anyway, I will cut to the chase and tell you that this is actually very similar to <a href="https://www.cdc.gov/vaccines/vpd-vac/rotavirus/vac-rotashield-historical.htm">the initial study</a> that was done on RotaShield. They actually did several studies and, combining information from them, 1 of the 4633 children who received the placebo developed intussusception and 5 of the 10,054 children in the vaccine group did and this difference was not statistically signficant. So the vaccine was approved and began to be given to children.</p>
+		<p>However, initial clinical trials are not the be-all and end-all. Through the monitoring program, it became apparent that some children were developing intussusception following vaccination. Vaccination was suspended and an investigation launched. That investigation suggested that about 1-2 in every 10,000 vaccinations resulted in intussusception. This is a lower frequency that we initially set out to test for, meaning that we wouldn't expect to detect it given the number of children in the initial clinical trial. The question is, should we have tested more children?</p>
+		<p>Again, I will not be venturing a "right" answer to this question. When later rotavirus vaccines were developed, the initial clinical trials involved about 60,000 children to try to detect at that 1 in 10,000 level. A clinical trial of that size is a massive and expensive undertaking. And it did not find a statistically significant difference between the groups. Some later monitoring has suggested <a href="https://www.cdc.gov/vaccines/pubs/pinkbook/rota.html">there might be a small increase in intussusception even with these later vaccines</a>, but they have not been pulled from the market. A history of intussusception is listed as a contraindication (those children should not get the vaccine) and it is something that parents should be made aware of so they know possible symptoms to look for, but any risk of side effects must be weighed against the benefits of decreased hospitalization and possible death from the rotavirus infection itself.</p>
+	</div>
+	<div class="container">
+		<h2>Summary</h2>
+		<p>So that is a brief rundown of some of the considerations of a clinical trial. You have to decide the rate of the thing that you want to look at and make sure you look at enough people to be confident that you could see a difference at that rate. But keep in mind that the more people you look at, the more expensive and time-consuming the trial will be. If this is a disease that people are dying from, the risks of a long clinical trial need to be considered. It also emphasizes that follow-up studies and monitoring are important and these are a key part of the vaccine safety procedures in place and have previously, as in the case of RotaShield, resulted in vaccines being removed from the market.</p>
+	</div>
+
+	<div class="container">
+		<h2>What's next?</h2>
+		<p>That's a rundown of the basic concepts. Knowing those, we can look at the studies examining those concepts, starting with <a href="/EfficacyStudies">how effective vaccines really are</a>.</p>
+	</div>
+
+	<div class="container">
+		<h2>Footnotes</h2>
+		<ol id="footnotes">
+			<li>Rotavirus is a disease that can cause diarrhoea and vomiting. Most children in developed countries recover, but it can result in dehydration. Prior to the vaccine, rotavirus was responsible for <a href="https://www.cdc.gov/vaccines/pubs/pinkbook/rota.html">about 60,000 hospitalizations and 20-60 deaths of children in the US each year</a>.</li>
+			<li>The two groups do not necessarily have to be equal in size. It depends on the rates of things that you expect.</li>
+		</ol>
+	</div>
+
+</div>
+
+
+

@@ -1,0 +1,51 @@
+		<div class="row">
+			<div class="col-sm-6">
+				<form action="action_page.php" method="get">
+					Efficacy:
+					<input type="number" name="efficacy" min="0" max="100" value="85">
+				</form>
+			</div>
+			<div class="col-sm-6">
+				<form action="action_page.php" method="get">
+					Probability of getting sick if unprotected*: <br>
+					<input type="radio" name="likeli_sick" value="1" checked> 1 in 1<br>
+					<input type="radio" name="likeli_sick" value="5"> 1 in 5<br>
+					<input type="radio" name="likeli_sick" value="10"> 1 in 10<br>
+					<input type="radio" name="likeli_sick" value="50"> 1 in 50<br>
+				</form>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-6 chart"><h4 class="chart-title">Sick People</h4><div id="column_proportion"></div></div>
+			<div class="col-sm-6 chart"><h4 class="chart-title">Whole Population</h4><div id="column_numsick"></div></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-4 chartpie"><h4 class="chart-title" id="vacc_title"></h4><div id="pie_vacc"></div></div>
+			<div class="col-sm-4 chartpie"><h4 class="chart-title" id="unvacc_title"></h4><div id="pie_unvacc"></div></div>
+			<div class="col-sm-4 chartpie"><h4 class="chart-title" id="all_title"></h4><div id="pie_all"></div></div>
+		</div>
+		<div class="row">
+			<p id="asideNotes">*This assumes that the probability of getting sick if unprotected is the same, no matter the vaccination rate. This is not the case for contagious diseases, where high levels of vaccination can interrupt the spread. See <a href="/HerdImmunity">here</a> for more.</p>
+		</div>
+
+<script type="text/javascript">
+	efficacy=$("input[name='efficacy']").val()/100;
+	cvg=0.9;
+	psick=1.0/$("input[name='likeli_sick']:checked").val();
+	MakeCalculatedChart();
+
+	$("input[name='efficacy']").on("input", function() {
+		efficacy=$(this).val()/100;
+		MakeCalculatedChart();
+	});
+
+	$("input[name='likeli_sick']").change(function() {
+		psick=1.0/$("input[name='likeli_sick']:checked").val();
+		MakeCalculatedChart();
+	});
+
+	$(window).resize(function(){
+		MakeCalculatedChart()
+	});
+</script>
