@@ -3,7 +3,7 @@ layout: page
 title: Efficacy studies
 permalink: /EfficacyStudies/
 inStudies: 0
-jsfname: RiskCalc.js
+jsfname: EfficacyStudies.js
 excerpt: It's a bunch of studies!
 ---
 
@@ -12,11 +12,30 @@ excerpt: It's a bunch of studies!
 		<h2>Under construction</h2>
 		<p>I hope to compile the wealth of information about vaccine efficacy from various sources into an interactive graph that can be filtered based on type of study, country of participants, funding body, etc. Sources would include a variety of scientific studies (starting point will be those cited in the <a href="http://www.cochrane.org/CD004407/ARI_using-combined-vaccine-protection-children-against-measles-mumps-and-rubella">Cochrane reviews</a>), <a href="https://www.cdc.gov/mmwr/preview/mmwrhtml/mm6236a2.htm">outbreak</a> <a href="http://www.cdc.gov/mmwr/preview/mmwrhtml/mm6322a4.htm?s_cid=mm6322a4_w">data</a> combined with vaccine coverage estimates and so on. A whole bunch of US monitoring data from <a href="https://www.tycho.pitt.edu/">Project Tycho</a> recently became available, so that's exciting. This is something of a large project though.</p>
 	</div>
+
+<!-- Waiting on
+http://www.cochrane.org/CD004407/ARI_using-combined-vaccine-protection-children-against-measles-mumps-and-rubella
+http://onlinelibrary.wiley.com/doi/10.1002/14651858.CD004407.pub3/full
+https://www.ncbi.nlm.nih.gov/pubmed/17609829
+http://smj.sma.org.sg/4807/4807a10.pdf
+-->
+  <div class="container">
+		<h2>Sample Measles Chart</h2>
+		<div class="col-sm-9 charttall"><div id="bubble_efficacy"></div></div>
+		<div class="col-sm-3 charttall"><div id="bubble_legend"></div></div>
+		<p>Hover over a study point to see the authors and notes on the study. Click to have the study open in a new window or tab. Colours show the region of most study participants and size of the point relates to the number of participants involved in the study. Solid points are studies where the first vaccination is scheduled after 12 months of age. Striped points are for studies where children are vaccinated before 12 months. Vaccination before 12 months is recommended in some regions where outbreaks are common, but maternal antibodies can interfere in the development of long-term immunity.</p>
+	</div>
+
 	<div class="container">
 		<h2>What's next?</h2>
 		<p>Those are the efficacy studies. Now for the <a href="{{ "/SideEffectStudies" | prepend: site.baseurl}}">vaccine side effect studies</a>.</p>
 	</div>
+
+	<script type="text/javascript">
+		MakeCalculatedChart();
+
+		$(window).resize(function(){
+			MakeCalculatedChart()
+		});
+	</script>
 </div>
-
-
-
