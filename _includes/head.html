@@ -13,9 +13,9 @@
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
 	{% if page.hasAside %}
-	  <link rel="stylesheet" href="{{ "/css/mainAside.css" | prepend: site.github.url }}">
+	  <link rel="stylesheet" href="{{ "/css/mainAside.css" | prepend: site.baseurl }}">
 	{% else %}
-		<link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.github.url }}">
+		<link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
 	{% endif %}
 	{% if page.jsfname %}
 		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
