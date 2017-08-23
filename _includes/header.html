@@ -55,7 +55,7 @@
 						{% if p.url == page.url %}
 							<li><a class="active-page" href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}<span class="sr-only">(current)</span></a></li>
 						{% else %}
-							<li><a class="page-link" href="{{ p.url | prepend: site.bsaeurl }}">{{ p.title }}</a></li>
+							<li><a class="page-link" href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a></li>
 						{% endif %}
 						{% endif %}
 					{% endfor %}
